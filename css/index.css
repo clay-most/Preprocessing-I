@@ -180,33 +180,89 @@ nav a:first-child {
   border-top: 1px solid black;
 }
 
-.cards{
-  display:flex;
+.intro{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+@media (min-width: 501px) {
+  header {
+    height: 75px;
+    padding: 10px 15px;
+  }
+
+  nav {
+    flex-direction: row;
+    justify-content: space-around;
+  }
+
+  nav a {
+    align-self: center;
+    width: auto;
+    padding: 10px 15px;
+    border: 1px solid black;
+  }
+}
+@media (min-width: 801px) {
+  .intro {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+  }
+  .headshot{
+    margin: 0 auto;
+  }
+  .intro-text {
+    align-self: center;
+    max-width: 50%;
+  }
+}
+
+.cards {
+  display: flex;
   flex-wrap: wrap;
 }
 
 .skill-card {
   margin: 0 auto;
-  display:flex;
+  display: flex;
   flex-direction: column;
   justify-content: center;
   border-bottom: 1px dashed black;
   padding-bottom: 10px;
 }
 
-li{
+@media(min-width:801px){
+.cards{
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+}
+}
+
+li {
   padding: 8px 5px 0;
   list-style: decimal inside;
 }
 
-address{
+address {
   padding: 10px 0;
 }
 
-address p{
+address p {
   margin: 5px 0;
 }
 
 footer nav {
-  display: none;
+  visibility: hidden;
+}
+@media(min-width:801px){
+footer{
+  display:flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+footer nav{
+  visibility: visible;
+}
 }
