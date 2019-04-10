@@ -254,7 +254,7 @@ address p {
 }
 
 footer nav {
-  visibility: hidden;
+  display:none;
 }
 @media(min-width:801px){
 footer{
@@ -263,6 +263,6 @@ footer{
   justify-content: space-between;
 }
 footer nav{
-  visibility: visible;
+  display: flex;
 }
 }
