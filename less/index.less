@@ -57,3 +57,86 @@ html, body {
 	height: 100%;
 }
 
+/* My Code */
+@main-color:#c5ade1;
+.center(){
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.elbow-room(){
+	display: flex;
+	justify-content: space-around;
+}
+.btn() {
+	display: flex;
+	align-items: center;
+	background-color: lighten(@main-color,8%);
+	border: 2px solid darken(@main-color,8%);
+	height: 35px;
+	padding: 0 10px;
+	margin: auto;
+	text-decoration: none;
+	border-radius: 25%;
+	&:hover { background-color: darken(@main-color, 8%);
+	}
+}
+container {
+	
+	header { 
+		background-color: @main-color;
+		height: 75px;
+		.center();
+		nav{
+			width: 85%;
+			.elbow-room();
+			a {
+				.btn();
+			}
+		}
+	}
+	.intro{
+		img{
+
+		}
+		.intro-text{
+
+		}
+	}
+	.skills{
+		h2{
+
+		}
+		.skill-card{
+
+		}
+	}
+	.work-history{
+		h2{
+
+		}
+		ol{
+			li{
+
+			}
+		}
+	}
+	.contact {
+		address {
+			p {
+
+			}
+		}
+	}
+	footer{
+		background-color: @main-color;
+		.center();
+		nav{
+			.elbow-room();
+			width: 85%;
+			a {
+			.btn();
+			}
+		}	
+	}
+}
