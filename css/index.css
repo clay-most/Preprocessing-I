@@ -138,11 +138,9 @@ body {
 * {
   max-width: 100%;
 }
-
 .container {
   padding: 0 10px;
 }
-
 h1,
 h2,
 h3,
@@ -151,20 +149,35 @@ h4 {
   text-align: center;
   margin: 15px 0;
 }
-
 header {
   display: flex;
   justify-content: center;
+  align-items: stretch;
+  flex-direction: row;
 }
-
+@media (min-width: 501px) {
+  header {
+    height: 75px;
+    padding: 10px 15px;
+  }
+}
 nav {
   display: flex;
-  width: 100%;
+  justify-content: space-around;
+  align-items: stretch;
   flex-direction: column;
+  width: 100%;
   margin: 0;
   padding: 0;
 }
-
+@media (min-width: 501px) {
+  nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: stretch;
+    flex-direction: row;
+  }
+}
 nav a {
   width: 100%;
   display: block;
@@ -175,28 +188,7 @@ nav a {
   text-decoration: none;
   color: black;
 }
-
-nav a:first-child {
-  border-top: 1px solid black;
-}
-
-.intro {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-}
-
 @media (min-width: 501px) {
-  header {
-    height: 75px;
-    padding: 10px 15px;
-  }
-
-  nav {
-    flex-direction: row;
-    justify-content: space-around;
-  }
-
   nav a {
     align-self: center;
     width: auto;
@@ -204,27 +196,45 @@ nav a:first-child {
     border: 1px solid black;
   }
 }
+nav a:first-child {
+  border-top: 1px solid black;
+}
+.intro {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  flex-direction: column;
+}
 @media (min-width: 801px) {
   .intro {
     display: flex;
     justify-content: space-between;
+    align-items: stretch;
     flex-direction: row;
   }
-  .headshot {
+}
+@media (min-width: 801px) {
+  .intro .headshot {
     margin: 0 auto;
   }
-  .intro-text {
+}
+@media (min-width: 801px) {
+  .intro .intro-text {
     align-self: center;
     max-width: 50%;
   }
 }
-
 .cards {
   display: flex;
   flex-wrap: wrap;
 }
-
-.skill-card {
+@media (min-width: 801px) {
+  .cards {
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+  }
+}
+.cards .skill-card {
   margin: 0 auto;
   display: flex;
   flex-direction: column;
@@ -232,29 +242,20 @@ nav a:first-child {
   border-bottom: 1px dashed black;
   padding-bottom: 10px;
 }
-
 @media (min-width: 801px) {
-  .cards {
-    border-top: 1px solid black;
-    border-bottom: 1px solid black;
+  .cards .skill-card {
+    border-bottom: none;
   }
 }
-
 li {
   padding: 8px 5px 0;
   list-style: decimal inside;
 }
-
 address {
   padding: 10px 0;
 }
-
 address p {
   margin: 5px 0;
-}
-
-footer nav {
-  display: none;
 }
 @media (min-width: 801px) {
   footer {
@@ -262,6 +263,11 @@ footer nav {
     flex-direction: row;
     justify-content: space-between;
   }
+}
+footer nav {
+  display: none;
+}
+@media (min-width: 801px) {
   footer nav {
     display: flex;
   }
