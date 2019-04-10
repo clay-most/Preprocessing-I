@@ -135,3 +135,44 @@ body {
   height: 100%;
 }
 /* My Code */
+* {
+  max-width: 100%;
+}
+
+.container {
+  padding: 0 10px;
+}
+
+header {
+  display: flex;
+  justify-content: center;
+}
+
+nav {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+}
+
+nav a {
+  width: 100%;
+  display: block;
+  text-align: center;
+  padding: 20px 0;
+  font-size: 20px;
+  border-bottom: 1px solid black;
+  text-decoration: none;
+  color: black;
+}
+
+nav a:first-child {
+  border-top: 1px solid black;
+}
+
+
+
+footer nav {
+  display:none;
+}
