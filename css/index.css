@@ -180,7 +180,7 @@ nav a:first-child {
   border-top: 1px solid black;
 }
 
-.intro{
+.intro {
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -210,7 +210,7 @@ nav a:first-child {
     justify-content: space-between;
     flex-direction: row;
   }
-  .headshot{
+  .headshot {
     margin: 0 auto;
   }
   .intro-text {
@@ -233,11 +233,11 @@ nav a:first-child {
   padding-bottom: 10px;
 }
 
-@media(min-width:801px){
-.cards{
-  border-top: 1px solid black;
-  border-bottom: 1px solid black;
-}
+@media (min-width: 801px) {
+  .cards {
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+  }
 }
 
 li {
@@ -254,15 +254,15 @@ address p {
 }
 
 footer nav {
-  display:none;
+  display: none;
 }
-@media(min-width:801px){
-footer{
-  display:flex;
-  flex-direction: row;
-  justify-content: space-between;
-}
-footer nav{
-  display: flex;
-}
+@media (min-width: 801px) {
+  footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  footer nav {
+    display: flex;
+  }
 }
