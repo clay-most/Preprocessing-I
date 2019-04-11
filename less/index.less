@@ -1,59 +1,267 @@
-// Is this working?
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
    License: none (public domain)
 */
 
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
-	display: block;
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
 }
 body {
-	line-height: 1;
+  line-height: 1;
 }
-ol, ul {
-	list-style: none;
+ol,
+ul {
+  list-style: none;
 }
-blockquote, q {
-	quotes: none;
+blockquote,
+q {
+  quotes: none;
 }
-blockquote:before, blockquote:after,
-q:before, q:after {
-	content: '';
-	content: none;
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
 }
 table {
-	border-collapse: collapse;
-	border-spacing: 0;
+  border-collapse: collapse;
+  border-spacing: 0;
 }
 
 /* Set every element's box-sizing to border-box */
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
-html, body {
-    height: 100%;
+html,
+body {
+  height: 100%;
 }
 
+/* My Code */
+
+.flex(@justify,@line,@flow) {
+  display: flex;
+  justify-content: @justify;
+  align-items: @line;
+  flex-flow: @flow;
+}
+
+@dashed: 1px dashed black;
+@solid: 1px solid black;
+
+* {
+  max-width: 100%;
+}
+
+.container {
+  padding: 0 10px;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-size: 130%;
+  text-align: center;
+  margin: 15px 0;
+}
+
+header {
+  .flex(center, stretch, row);
+
+  @media (min-width: 501px) {
+    height: 75px;
+    padding: 10px 15px;
+  }
+}
+
+nav {
+  .flex(space-around, stretch, column);
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  @media (min-width: 501px) {
+    .flex(space-around, stretch, row);
+  }
+
+  a {
+    width: 100%;
+    display: block;
+    text-align: center;
+    padding: 20px 0;
+    font-size: 20px;
+    border-bottom: @dashed;
+    text-decoration: none;
+    color: black;
+    @media (min-width: 501px) {
+      align-self: center;
+      width: auto;
+      padding: 10px 15px;
+      border: @solid;
+
+      &:first-child {
+        border-top: @solid;
+      }
+    }
+  }
+}
+
+.intro {
+  .flex(center, stretch, column);
+  @media (min-width: 801px) {
+    .flex(space-between, stretch, row);
+  }
+  .headshot {
+    @media (min-width: 801px) {
+      margin: 0 auto;
+    }
+  }
+  .intro-text {
+    @media (min-width: 801px) {
+      align-self: center;
+      max-width: 50%;
+    }
+  }
+}
+
+.cards {
+  .flex(space-around, center, row-wrap);
+  @media (min-width: 801px) {
+    border-top: @solid;
+    border-bottom: @solid;
+  }
+  .skill-card {
+    margin: 0 auto;
+    .flex(center, stretch, column);
+    border-bottom: @dashed;
+    padding-bottom: 10px;
+    @media (min-width: 801px) {
+      border-bottom: none;
+    }
+  }
+}
+
+li {
+  padding: 8px 5px 0;
+  list-style: decimal inside;
+}
+
+address {
+  padding: 10px 0;
+  p {
+    margin: 5px 0;
+  }
+}
+
+footer {
+  @media (min-width: 801px) {
+    .flex(space-between, stretch, row);
+  }
+  nav {
+    display: none;
+    @media (min-width: 801px) {
+      display: flex;
+    }
+  }
+}
